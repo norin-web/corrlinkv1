@@ -19,8 +19,9 @@ Static promo site for the CorrLink app (iPhone). React + TypeScript + Vite + Tai
 
 ## Deployment (GitHub Pages)
 
-- Without a custom domain the site lives at `https://norin-web.github.io/corrlinkv1/`, so `vite.config.ts` uses `base: "/corrlinkv1/"`.
-- Attaching a custom domain: set `base: "/"` and add `public/CNAME` in the same commit. Pages source must be **GitHub Actions**.
+- Live at `https://corrlink.site/` (custom domain). `vite.config.ts` uses `base: "/"` and `public/CNAME` holds the domain. The two must change together.
+- Without the domain, the site lives at `https://norin-web.github.io/corrlinkv1/`: set `base: "/corrlinkv1/"` and delete `public/CNAME` in the same commit.
+- Pages source must be **GitHub Actions**.
 - Deploys run from `.github/workflows/deploy.yml` on every push to `main`. The workflow copies `index.html` to `404.html` so deep links work.
 
 ## Rules that bite
