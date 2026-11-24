@@ -1,27 +1,22 @@
+import PageHead from "../components/PageHead";
 import Btn from "../components/Btn";
 
 export default function About() {
   return (
     <>
-      <section className="page-head">
-        <div className="container">
-          <h1 className="h-display">About CorrLink</h1>
-        </div>
-      </section>
-      <section className="section">
-        <div className="container prose">
-          <p className="lead">
-            CorrLink is a messaging app for keeping in touch with someone in a correctional facility. The conversation stays in one place: you write, read and reply from your iPhone.
-          </p>
-          <p>
-            The AI assistant helps you draft letters and improve your prompts.
-          </p>
-          <p>
-            Messages are checked by the facility before they are delivered.
-          </p>
-          <div className="hero__actions">
-            <Btn to="/app" variant="ghost">See the app</Btn>
-            <Btn to="/contact" variant="ghost">Contact us</Btn>
+      <PageHead label="About" tone="About" rest="CorrLink" />
+      <section className="section section--tight">
+        <div className="container narrow">
+          <div className="panel prose">
+            <p>
+              CorrLink is a messaging app for keeping in touch with someone in a correctional facility. The conversation stays in one place: you write, read and reply from your iPhone.
+            </p>
+            <p>Every message is checked by the facility before it’s delivered, and the app shows where each message is: in review or read.</p>
+            <p>The assistant helps you find the right words. It answers questions about contacts, messages and facility rules, and suggests drafts you can edit.</p>
+            <div className="row-btns">
+              <Btn to="/app" variant="light">See the app</Btn>
+              <Btn to="/contact" variant="light">Contact us</Btn>
+            </div>
           </div>
         </div>
       </section>

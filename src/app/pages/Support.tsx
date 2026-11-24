@@ -1,50 +1,36 @@
 import { useState } from "react";
+import PageHead from "../components/PageHead";
 import { faq, site } from "../content/site";
 
-/** Questions appear as chips; the chosen answer opens as a reply bubble, like the app's AI chat. */
+/** Questions appear as chips and the answer opens as a reply bubble, like the app's assistant. */
 export default function Support() {
-  const [active, setActive] = useState<number | null>(null);
-  const current = active === null ? null : faq[active];
+  const [active, setActive] = useState(0);
+  const current = faq[active];
 
   return (
     <>
-      <section className="page-head">
-        <div className="container">
-          <h1 className="h-display">Support</h1>
-          <p className="lead">Tap a question to see the answer.</p>
-        </div>
-      </section>
-
-      <section className="section">
-        <div className="container support">
-          <div className="chips" role="list">
-            {faq.map((item, i) => (
-              <button
-                key={item.q}
-                role="listitem"
-                className={`chip-q${active === i ? " is-on" : ""}`}
-                aria-pressed={active === i}
-                onClick={() => setActive(i)}
-              >
-                {item.q}
-              </button>
-            ))}
+      <PageHead label="Support" tone="How can we" rest="help?" sub="Tap a question to see the answer." />
+      <section className="section section--tight">
+        <div className="container narrow">
+          <div className="panel assist">
+            <div className="assist__chips">
+              {faq.map((item, i) => (
+                <button
+                  key={item.q}
+                  className={`chip${active === i ? " is-on" : ""}`}
+                  aria-pressed={active === i}
+                  onClick={() => setActive(i)}
+                >
+                  {item.q}
+                </button>
+              ))}
+            </div>
+            <div className="assist__thread" aria-live="polite">
+              <span className="bub bub--out">{current.q}</span>
+              <span className="bub bub--in">{current.a}</span>
+            </div>
           </div>
-
-          <div className="reply" aria-live="polite">
-            {current ? (
-              <>
-                <p className="reply__q">{current.q}</p>
-                <p className="bubble">{current.a}</p>
-              </>
-            ) : (
-              <p className="muted">Choose a question above.</p>
-            )}
-          </div>
-
-          <p className="muted">
-            Still need help? Write to <a className="link" href={`mailto:${site.email}`}>{site.email}</a>.
-          </p>
+          <p className="faq__more">Still need help? Email us at <a href={`mailto:${site.email}`}>{site.email}</a></p>
         </div>
       </section>
     </>

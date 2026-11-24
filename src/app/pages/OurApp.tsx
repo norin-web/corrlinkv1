@@ -1,56 +1,44 @@
-import { StoreButton } from "../components/Btn";
-import { features, specs } from "../content/site";
-import { img } from "../utils/img";
+import PageHead from "../components/PageHead";
+import Phone from "../components/Phone";
+import { StoreBadge } from "../components/Btn";
+import { phones, specs } from "../content/site";
+
+const screens = [
+  { ...phones.messages, title: "Messages", text: "All conversations, with All, Unread and In review filters." },
+  { ...phones.chat, title: "Chat", text: "Each sent message is marked Read once it’s been read." },
+  { ...phones.helpWrite, title: "Help me write", text: "A suggested draft you can use and edit before sending." },
+  { ...phones.contacts, title: "Contacts", text: "Approved, Waiting for approval and Not available." },
+];
 
 export default function OurApp() {
   return (
     <>
-      <section className="page-head">
-        <div className="container">
-          <h1 className="h-display">CorrLink for iPhone</h1>
-          <p className="lead">
-            The conversation list, the AI chat, your contacts and settings, in one app.
-          </p>
-          <div className="hero__actions">
-            <StoreButton size="sm" />
-          </div>
-        </div>
-      </section>
+      <PageHead label="The app" tone="CorrLink" rest="for iPhone" sub="Messages, chat, contacts and a writing assistant in one app.">
+        <StoreBadge />
+      </PageHead>
 
-      <section className="section">
+      <section className="section section--tight">
         <div className="container">
-          <div className="app-strip">
-            {features.flatMap((f) => f.shots).map((s) => (
-              <img key={s.src} src={img(s.src)} alt={s.alt} width={393} height={852} loading="lazy" />
+          <div className="screens">
+            {screens.map((s) => (
+              <figure className="screens__item" key={s.src}>
+                <Phone src={s.src} alt={s.alt} />
+                <figcaption>
+                  <h2>{s.title}</h2>
+                  <p>{s.text}</p>
+                </figcaption>
+              </figure>
             ))}
           </div>
         </div>
       </section>
 
       <section className="section">
-        <div className="container">
-          <h2 className="h-section">Features</h2>
-          <div className="features">
-            {features.map((f, i) => (
-              <div className={`feature${i % 2 ? " feature--flip" : ""}`} key={f.title}>
-                <div className="feature__text">
-                  <h3>{f.title}</h3>
-                  <p>{f.text}</p>
-                </div>
-                <div className="shots">
-                  {f.shots.map((s) => (
-                    <img key={s.src} src={img(s.src)} alt={s.alt} width={393} height={852} loading="lazy" />
-                  ))}
-                </div>
-              </div>
-            ))}
+        <div className="container narrow">
+          <div className="head">
+            <p className="label">Details</p>
+            <h2 className="h2"><span className="tone">What to</span> expect</h2>
           </div>
-        </div>
-      </section>
-
-      <section className="section">
-        <div className="container">
-          <h2 className="h-section">Details</h2>
           <dl className="specs">
             {specs.map(([k, v]) => (
               <div key={k}>

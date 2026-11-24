@@ -1,5 +1,5 @@
 // Every fact about the app and the site lives here. Pages read only from this file.
-// Every feature and status below is taken from a screen in the app design (Figma, file q43BHHMfPMpiRxGbtRgmgP).
+// Every feature, label and status below is taken from the app's own screens.
 
 export const site = {
   brand: "CorrLink",
@@ -9,9 +9,7 @@ export const site = {
 
 export const app = {
   id: "6832091020",
-  // Not published yet: the store button stays "Coming soon" until this is set to
-  // https://apps.apple.com/app/id6832091020 (the iTunes lookup returns nothing until release).
-  url: null as string | null,
+  url: "https://apps.apple.com/app/id6832091020",
   platform: "iPhone",
   languages: "English and Spanish",
 };
@@ -23,37 +21,34 @@ export const nav = [
   { to: "/contact", label: "Contact" },
 ];
 
+export const phones = {
+  messages: { src: "/images/phone-messages.webp", alt: "Messages: all conversations with All, Unread and In review filters" },
+  chat: { src: "/images/phone-chat.webp", alt: "Chat with Danielle Brooks, messages marked Read" },
+  helpWrite: { src: "/images/phone-help-write.webp", alt: "Help me write: a suggested draft with Use draft and Rewrite" },
+  contacts: { src: "/images/phone-contacts.webp", alt: "Contacts grouped into Approved, Waiting for approval and Not available" },
+};
+
+// Six short facts around the phone in the Features section.
 export const features = [
-  {
-    title: "Writing help in the AI chat",
-    text: "Ask the assistant about contacts, messages or facility rules, or let it help you write a letter. Prompt Enhancer improves your prompt with Add details, Shorter or Rewrite.",
-    shots: [
-      { src: "/images/screen-ai-answer.webp", alt: "AI chat with an answer about message review" },
-      { src: "/images/screen-prompt-enhancer.webp", alt: "Prompt Enhancer sheet with options" },
-    ],
-  },
-  {
-    title: "Contacts with a status",
-    text: "Contacts with Approved status can receive messages. Those marked Waiting or Transferred are listed under Not available yet.",
-    shots: [{ src: "/images/screen-new-message.webp", alt: "New message screen with contact statuses" }],
-  },
-  {
-    title: "Settings",
-    text: "Change the language, set notifications, and open Help & FAQ or Contact support from Settings.",
-    shots: [{ src: "/images/screen-settings.webp", alt: "Settings screen" }],
-  },
+  { icon: "lock", title: "Private assistant", text: "The assistant is private and not shared with facilities." },
+  { icon: "search", title: "Search contacts", text: "Find anyone in your contacts by name." },
+  { icon: "type", title: "Up to 1,000 characters", text: "Each message can be up to 1,000 characters long." },
+  { icon: "image", title: "Photos", text: "Add a photo to a message from the composer." },
+  { icon: "bell", title: "Notifications", text: "Get notified when a message is delivered or if it’s rejected." },
+  { icon: "globe", title: "English and Spanish", text: "Switch the app language in Settings." },
 ];
 
 export const steps = [
-  { title: "Download the app", text: "CorrLink is coming soon to the App Store." },
-  { title: "Add a contact", text: "Tap Add a contact. The contact can receive messages once it is Approved." },
-  { title: "Send your first message", text: "Open the conversation and write. If you like, ask the AI chat for help first." },
+  { icon: "download", title: "Download CorrLink", text: "Get the app on the App Store." },
+  { icon: "userPlus", title: "Add a contact", text: "Tap Add a contact. Approved contacts can receive messages." },
+  { icon: "send", title: "Write your first message", text: "Type it yourself or ask Help me write for a draft." },
 ];
 
 export const specs: [string, string][] = [
   ["Platform", app.platform],
   ["Languages", app.languages],
   ["Messages", "Checked by the facility before they are delivered"],
+  ["Message length", "Up to 1,000 characters"],
 ];
 
 export const faq = [
@@ -62,15 +57,15 @@ export const faq = [
     a: "Open Contacts and tap Add a contact. A contact can receive messages once it is Approved.",
   },
   {
-    q: "Why can't I message a contact?",
-    a: "A contact marked Waiting or Transferred is listed under Not available yet and cannot receive messages for now.",
+    q: "Why can’t I message a contact?",
+    a: "Contacts marked Waiting or Transferred are shown separately and can’t receive messages.",
   },
   {
     q: "Why is my message still in review?",
-    a: "Every message is checked by the facility before it's delivered. This usually takes a few hours, sometimes up to 2 days.",
+    a: "Every message is checked by the facility before it’s delivered. This usually takes a few hours, sometimes up to 2 days. You’ll get a notification when it’s delivered or if it’s rejected.",
   },
   {
-    q: "How does the writing help work?",
-    a: "Ask the AI chat for help with a letter or a question. Prompt Enhancer improves your prompt with Add details, Shorter or Rewrite.",
+    q: "How does Help me write work?",
+    a: "It suggests a draft. Use draft puts it in the message field so you can edit it before sending.",
   },
 ];
