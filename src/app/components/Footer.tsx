@@ -34,7 +34,10 @@ export default function Footer() {
           </div>
         </div>
       </div>
-      <div className="container footer__copy">© {site.year} {site.brand}</div>
+      <div className="container footer__copy">
+        <p>© {site.year} {site.operator} · {site.location}</p>
+        <p className="footer__legal">{site.disclaimer}</p>
+      </div>
     </footer>
   );
 }

@@ -1,4 +1,4 @@
-/** Small pieces of the app UI rebuilt in HTML, text taken 1:1 from the app screens. */
+/** Small pieces of the app UI rebuilt in HTML. Text follows the app screens; the assistant answer is shortened to match the Privacy Policy (no push notifications). */
 
 export function FilterFragment() {
   return (
@@ -44,7 +44,7 @@ export function AskFragment() {
   return (
     <div className="frag frag--glass" aria-hidden="true">
       <span className="bub bub--out">Why is my message still in review?</span>
-      <span className="bub bub--in">Every message is checked by the facility before it’s delivered. This usually takes a few hours, sometimes up to 2 days. You’ll get a notification when it’s delivered or if it’s rejected.</span>
+      <span className="bub bub--in">Facilities may review messages before delivery, and review can take time. The status changes when it’s delivered or rejected.</span>
     </div>
   );
 }

@@ -5,6 +5,11 @@ export const site = {
   brand: "CorrLink",
   email: "elenaceo@ostermann.click",
   year: new Date().getFullYear(),
+  // From the Privacy Policy and Terms of Use.
+  operator: "Elena Ostermann",
+  location: "Berlin, Germany",
+  disclaimer:
+    "The CORRLINKS trademark and associated brand elements are the property of Advanced Technologies Group, LLC or its applicable rights holders, and are used under a trademark license and brand authorization agreement.",
 };
 
 export const app = {
@@ -30,11 +35,11 @@ export const phones = {
 
 // Six short facts around the phone in the Features section.
 export const features = [
-  { icon: "lock", title: "Private assistant", text: "The assistant is private and not shared with facilities." },
+  { icon: "lock", title: "Assistant history", text: "Your chats with the assistant are saved on your iPhone, not on our servers." },
   { icon: "search", title: "Search contacts", text: "Find anyone in your contacts by name." },
   { icon: "type", title: "Up to 1,000 characters", text: "Each message can be up to 1,000 characters long." },
   { icon: "image", title: "Photos", text: "Add a photo to a message from the composer." },
-  { icon: "bell", title: "Notifications", text: "Get notified when a message is delivered or if it’s rejected." },
+  { icon: "read", title: "Status updates", text: "See in the app when a message is in review, delivered or rejected." },
   { icon: "globe", title: "English and Spanish", text: "Switch the app language in Settings." },
 ];
 
@@ -47,8 +52,11 @@ export const steps = [
 export const specs: [string, string][] = [
   ["Platform", app.platform],
   ["Languages", app.languages],
-  ["Messages", "Checked by the facility before they are delivered"],
+  ["Messages", "May be reviewed by the facility before delivery"],
   ["Message length", "Up to 1,000 characters"],
+  ["Account", "Not required"],
+  ["Age", "16 and older"],
+  ["Purchases", "Subscriptions through the App Store"],
 ];
 
 export const faq = [
@@ -62,10 +70,22 @@ export const faq = [
   },
   {
     q: "Why is my message still in review?",
-    a: "Every message is checked by the facility before it’s delivered. This usually takes a few hours, sometimes up to 2 days. You’ll get a notification when it’s delivered or if it’s rejected.",
+    a: "Facilities may review messages before delivery, and review can take time. The status in the app changes when the message is delivered or if it’s rejected. Delivery isn’t guaranteed.",
   },
   {
     q: "How does Help me write work?",
     a: "It suggests a draft. Use draft puts it in the message field so you can edit it before sending.",
+  },
+  {
+    q: "Who sees my chats with the assistant?",
+    a: "Your questions are sent to OpenAI to get an answer. The chat history is saved on your iPhone, not on our servers.",
+  },
+  {
+    q: "Do I need an account?",
+    a: "No. CorrLink doesn’t ask for an email address, phone number or password to use its core features.",
+  },
+  {
+    q: "How do I cancel my subscription?",
+    a: "Open your Apple Account subscription settings. Deleting the app doesn’t cancel a subscription. Access usually continues until the end of the paid period.",
   },
 ];

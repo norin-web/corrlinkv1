@@ -22,7 +22,7 @@ export default function Home() {
           <h1 className="h1">
             <span className="tone">Stay in touch with someone</span> in a correctional facility.
           </h1>
-          <p className="sub">Write, read and reply from your iPhone. Every message is checked by the facility before it’s delivered.</p>
+          <p className="sub">Write, read and reply from your iPhone. Messages may be reviewed by the facility, and the app shows where each one is.</p>
           <StoreBadge />
         </div>
         <div className="hero__phones">
@@ -35,7 +35,7 @@ export default function Home() {
         <div className="container statement">
           <p className="label">In short</p>
           <p className="statement__text">
-            <span className="tone">Every message is checked by the facility.</span> CorrLink shows where each one is: in review or read.
+            <span className="tone">Facilities may review messages before delivery.</span> CorrLink shows where each one is: in review or read.
           </p>
         </div>
       </section>
@@ -106,7 +106,7 @@ export default function Home() {
             <article className="tile">
               <div className="tile__art"><AskFragment /></div>
               <h3>Ask the assistant</h3>
-              <p>Ask about contacts, messages or facility rules.</p>
+              <p>Ask about contacts, messages or general facility procedures. Answers can be wrong, so check what matters.</p>
             </article>
             <article className="tile">
               <div className="tile__art"><DraftFragment /></div>

@@ -287,6 +287,7 @@ figure { margin: 0; }
   .h2 { font-size: 32px; }
   .statement__text { font-size: 32px; }
   .nav { top: 20px; }
+  .docbar { top: 84px; }
   .nav__links { display: flex; }
   .nav__cta { display: inline-flex; }
   .nav__burger, .nav__menu { display: none !important; }
@@ -307,6 +308,7 @@ figure { margin: 0; }
 /* Desktop */
 @media (min-width: 1024px) {
   .section { padding: 72px 0; }
+  .section--tight { padding-top: 8px; }
   .around { grid-template-columns: 1fr 300px 1fr; align-items: center; gap: 40px; }
   .around__phone { width: 300px; }
   .around__col li { height: 184px; }
@@ -336,3 +338,37 @@ figure { margin: 0; }
   .compose { padding: 32px; }
   .compose__who { grid-template-columns: 1fr 1fr; }
 }
+
+/* Privacy / Terms: segmented switch like the app's message filter, search like the app's contact search */
+.docswitch { display: grid; grid-template-columns: 1fr 1fr; margin-top: 24px; padding: 4px; border-radius: 99px; background: var(--app-track); width: 100%; max-width: 340px; }
+.docswitch a { display: grid; place-items: center; min-height: 44px; border-radius: 99px; text-decoration: none; font-size: 15px; color: var(--app-muted); }
+.docswitch a.is-on { background: var(--white); color: var(--ink); font-weight: 600; box-shadow: 0 1px 3px var(--seg-shadow); }
+.docswitch a:not(.is-on):hover { color: var(--ink); }
+.docsearch { display: flex; align-items: center; gap: 12px; min-height: 48px; padding: 0 16px; border-radius: 16px; background: var(--card); box-shadow: inset 0 0 0 1px var(--line); color: var(--app-muted); }
+.docsearch svg { width: 20px; height: 20px; flex-shrink: 0; }
+.docsearch input { flex: 1; min-width: 0; min-height: 46px; border: 0; background: transparent; font: inherit; font-size: 16px; font-weight: 400; letter-spacing: -0.02em; color: var(--ink); outline: none; }
+.docsearch:focus-within { box-shadow: inset 0 0 0 2px var(--blue-light); }
+.docsearch__count { flex-shrink: 0; font-size: 14px; color: var(--tone); white-space: nowrap; }
+.docbar { position: sticky; top: 76px; z-index: 5; padding: 8px 0; background: var(--bg); box-shadow: 0 -24px 0 var(--bg); }
+.docbar::after { content: ""; position: absolute; left: 0; right: 0; top: 100%; height: 16px; background: linear-gradient(var(--bg), transparent); pointer-events: none; }
+.legal { margin-top: 12px; background: var(--card); border-radius: 32px; padding: 24px 20px; letter-spacing: -0.02em; font-weight: 400; color: var(--ink); }
+.legal p, .legal li { font-size: 16px; line-height: 1.7; }
+.legal p + p, .legal ul + p, .legal p + ul { margin-top: 12px; }
+.legal b { font-weight: 600; }
+.legal a { color: var(--ink); text-underline-offset: 3px; overflow-wrap: anywhere; }
+.legal mark { background: var(--app-track); color: var(--ink); border-radius: 4px; padding: 0 2px; }
+.legal__intro { padding-bottom: 24px; border-bottom: 1px solid var(--line); }
+.legal__sec { padding: 24px 0; border-bottom: 1px solid var(--line); scroll-margin-top: 168px; }
+.legal__sec:last-child { border-bottom: 0; padding-bottom: 0; }
+.legal__intro + .legal__sec, .legal > .legal__sec:first-child { padding-top: 24px; }
+.legal > .legal__sec:first-child { padding-top: 0; }
+.legal__sec h2 { font-size: 20px; line-height: 1.35; letter-spacing: -0.02em; margin-bottom: 12px; }
+.legal ul { display: grid; gap: 12px; }
+.legal li { position: relative; padding-left: 20px; }
+.legal li::before { content: ""; position: absolute; left: 4px; top: 0.75em; width: 6px; height: 6px; border-radius: 50%; background: var(--blue-light); }
+@media (min-width: 720px) {
+  .legal { padding: 48px 56px; }
+  .legal p, .legal li { font-size: 17px; }
+}
+.footer__copy { display: grid; gap: 8px; }
+.footer__legal { font-size: 13px; line-height: 1.5; max-width: 720px; }

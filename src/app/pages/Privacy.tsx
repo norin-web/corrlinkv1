@@ -1,18 +1,6 @@
-import PageHead from "../components/PageHead";
-import { site } from "../content/site";
+import LegalDoc from "../components/LegalDoc";
+import { privacy } from "../content/legal";
 
 export default function Privacy() {
-  return (
-    <>
-      <PageHead label="Legal" tone="Privacy" rest="Policy" />
-      <section className="section section--tight">
-        <div className="container narrow">
-          <div className="panel prose">
-            <p>This page is not available yet.</p>
-            <p>Questions: <a href={`mailto:${site.email}`}>{site.email}</a></p>
-          </div>
-        </div>
-      </section>
-    </>
-  );
+  return <LegalDoc tone="Privacy" title="Policy" doc={privacy} current="/privacy" />;
 }
